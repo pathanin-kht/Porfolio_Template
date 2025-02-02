@@ -3,26 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Change this title to your name -->
     <title>Your Name - Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .dark-mode .bg-light {
+            background-color: #1e1e1e !important;
+        }
+        .dark-mode .card {
+            background-color: #2d2d2d;
+            color: #ffffff;
+        }
+        .dark-mode .border-bottom {
+            border-bottom-color: #444 !important;
+        }
+        .dark-mode .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        .dark-mode .btn-outline-primary {
+            color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        .dark-mode .btn-outline-primary:hover {
+            background-color: #0d6efd;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
+    <!-- Dark Mode Toggle Button -->
+    <div class="text-end mt-3 me-3">
+        <button id="darkModeToggle" class="btn btn-secondary">🌙 Dark Mode</button>
+    </div>
+
     <!-- Header Section -->
     <header class="bg-light py-5">
         <div class="container">
             <div class="row align-items-center">
-                <!--Add your profile image in src -->
                 <div class="col-md-3 text-center">
                     <img src="your-image.jpg" alt="Profile Picture" class="rounded-circle img-fluid mb-3" style="width: 200px; height: 200px; object-fit: cover;">
                 </div>
                 <div class="col-md-9">
-                    <!-- Replace with your name -->
                     <h1 class="display-4">Your Name</h1>
-                    <!-- Replace with your current position -->
                     <p class="lead">Your Position</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <!-- Replace with your contact details -->
                         <a href="tel:" class="text-decoration-none">📱 Your Phone</a>
                         <a href="mailto:" class="text-decoration-none">📧 Your Email</a>
                         <a href="#" class="text-decoration-none">💼 LinkedIn Profile</a>
@@ -37,10 +65,8 @@
         <!-- About Me Section -->
         <section class="mb-5">
             <h2 class="border-bottom pb-2 mb-4">About Me</h2>
-            <!-- Add your summary about yourself -->
             <p>Add your professional summary here. Describe your background, goals, and what makes you unique.</p>
             <div class="mt-4">
-                <!-- Add your resume link -->
                 <a href="#" class="btn btn-primary">View My Resume</a>
             </div>
         </section>
@@ -48,7 +74,6 @@
         <!-- Education Section -->
         <section class="mb-5">
             <h2 class="border-bottom pb-2 mb-4">Education</h2>
-            <!-- Add your educational background -->
             <h3>University Name</h3>
             <p>Your Degree</p>
             <p>Your Faculty | Your Major</p>
@@ -60,13 +85,11 @@
             <h2 class="border-bottom pb-2 mb-4">Project Experience</h2>
             <div class="card mb-3">
                 <div class="card-body">
-                    <!-- Add your project details -->
                     <h3 class="card-title">Project Name</h3>
                     <p class="text-muted">Duration: Start Date - End Date</p>
                     <p class="card-text">Project description and your role</p>
                     <p class="card-text">Technologies used</p>
                     <p class="card-text">Key achievements</p>
-                    <!-- Add project link -->
                     <a href="#" class="btn btn-outline-primary">View Project</a>
                 </div>
             </div>
@@ -75,31 +98,23 @@
         <!-- Skills Section -->
         <section class="mb-5">
             <h2 class="border-bottom pb-2 mb-4">Skills</h2>
-            <!-- IoT & Embedded Systems -->
             <div class="mb-4">
                 <h3>Hard Skill</h3>
                 <div class="d-flex flex-wrap gap-2">
-                    <!-- Add your Hard skills -->
                     <span class="badge bg-primary">Skill 1</span>
                     <span class="badge bg-primary">Skill 2</span>
                 </div>
             </div>
-
-            <!-- Soft Skills -->
             <div class="mb-4">
                 <h3>Soft Skills</h3>
                 <div class="d-flex flex-wrap gap-2">
-                    <!-- Add your soft skills -->
                     <span class="badge bg-primary">Skill 1</span>
                     <span class="badge bg-primary">Skill 2</span>
                 </div>
             </div>
-
-            <!-- Languages -->
             <div class="mb-4">
                 <h3>Languages</h3>
                 <div class="d-flex flex-wrap gap-2">
-                    <!-- Add your language skills -->
                     <span class="badge bg-primary">Language 1 (Level)</span>
                     <span class="badge bg-primary">Language 2 (Level)</span>
                 </div>
@@ -107,6 +122,19 @@
         </section>
     </div>
 
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = '☀️ Light Mode';
+            } else {
+                darkModeToggle.textContent = '🌙 Dark Mode';
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
